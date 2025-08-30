@@ -247,6 +247,27 @@ body[data-theme="dark"] .switch-thumb .thumb-moon {
   display: grid;
   gap: 1.2rem;
 }
+/* === Equal-height cards for 'Browse Categories' === */
+.cards {
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+.cards > .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.cards > .card img {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.cards > .card .card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .cards {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
@@ -520,7 +541,7 @@ textarea {
   transition-delay: 0.48s;
 }
 
-/* Preloader (home only) */
+/* ===== Creative Preloader: Coffee beans pouring into cup ===== */
 #preloader {
   position: fixed;
   inset: 0;
@@ -528,26 +549,166 @@ textarea {
   color: var(--text);
   display: grid;
   place-items: center;
-  gap: 0.6rem;
   z-index: 2000;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-#preloader .spinner {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  border: 3px solid var(--border);
-  border-top-color: var(--primary);
-  animation: spin 1s linear infinite;
 }
 #preloader.hide {
   opacity: 0;
   visibility: hidden;
 }
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+
+.bean-loader {
+  position: relative;
+  width: 220px;
+  height: 170px;
+}
+.bean-loader-text {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Beans */
+.beans {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+.bean {
+  width: 26px;
+  height: 36px;
+  background: color-mix(in srgb, var(--primary) 92%, #000);
+  border-radius: 55% 55% 45% 45% / 60% 60% 40% 40%;
+  transform: rotate(22deg);
+  position: absolute;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08) inset, 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.bean::after {
+  /* bean crease */
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  width: 2px;
+  height: 80%;
+  background: color-mix(in srgb, #fff 70%, var(--card));
+  border-radius: 2px;
+  transform: translateX(-50%) rotate(-8deg);
+  opacity: 0.6;
+}
+/* falling animation with slight spin */
+@keyframes bean-drop {
+  0% {
+    transform: translateY(-110px) translateX(-30px) rotate(0deg);
+    opacity: 0;
   }
+  20% {
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(0px) translateX(0) rotate(340deg);
+  }
+  84% {
+    transform: translateY(-16px) rotate(360deg);
+  }
+  100% {
+    transform: translateY(0) rotate(380deg);
+    opacity: 1;
+  }
+}
+.b1 {
+  animation: bean-drop 1.2s ease-in-out infinite;
+}
+.b2 {
+  animation: bean-drop 1.2s ease-in-out 0.2s infinite;
+}
+.b3 {
+  animation: bean-drop 1.2s ease-in-out 0.4s infinite;
+}
+
+/* Cup */
+.cup {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 64px;
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-top: 0;
+  border-radius: 0 0 22px 22px;
+  box-shadow: var(--shadow);
+}
+.cup::before {
+  /* saucer */
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 190px;
+  height: 16px;
+  background: color-mix(in srgb, var(--card) 85%, var(--bg));
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+}
+.cup::after {
+  /* handle */
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 12px;
+  width: 26px;
+  height: 26px;
+  border: 6px solid var(--card);
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--border) inset;
+}
+
+/* Steam */
+.steam {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  left: 50%;
+  top: -16px;
+  border-radius: 100px;
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0) 70%
+  );
+  filter: blur(1px);
+  opacity: 0;
+}
+@keyframes rise {
+  0% {
+    transform: translate(-6px, 6px) scale(0.8);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-6px, -34px) scale(1.1);
+    opacity: 0;
+  }
+}
+.s1 {
+  animation: rise 1.6s ease-in-out 0.1s infinite;
+}
+.s2 {
+  left: 58%;
+  animation: rise 1.6s ease-in-out 0.5s infinite;
+}
+.s3 {
+  left: 42%;
+  animation: rise 1.6s ease-in-out 0.9s infinite;
 }
 
 /* ===== Mobile/Tablet Sidebar Navigation ===== */
