@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BrewLoom Coffee — simple e-commerce demo with HTML, CSS, JS">
+  <title>Home • BrewLoom Coffee</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="home">
+  <!-- Preloader (only on home) -->
+  <div id="preloader" aria-hidden="true">
+    <div class="spinner"></div>
+    <p>Brewing your experience…</p>
+  </div>
+  <header id="top" class="navbar">
+  <div class="container nav-inner">
+    <button id="menuToggle" class="menu-toggle" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
+      <svg class="icon-burger" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/>
+      </svg>
+    </button>
+    <a class="brand" href="index.html">BrewLoom Coffee</a>
+    <nav class="nav-links">
+      <a href="index.html" data-link="home">Home</a>
+      <a href="coffee.html" data-link="coffee">Coffee</a>
+      <a href="pastries.html" data-link="pastries">Pastries</a>
+      <a href="accessories.html" data-link="accessories">Accessories</a>
+      <a href="contact.html" data-link="contact">Contact</a>
+    </nav>
+    <button id="themeToggle" class="theme-switch" aria-label="Switch to dark mode" aria-pressed="false" title="Switch theme">
+  <span class="switch-track" aria-hidden="true">
+    <span class="track-icon track-sun" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42Zm10.48 0 1.79-1.79 1.41 1.41-1.79 1.8-1.41-1.42ZM12 4V1h0v3Zm0 19v-3h0v3ZM4 12H1v0h3Zm22 0h-3v0h3ZM6.76 19.16l-1.8 1.79-1.41-1.41 1.79-1.8 1.42 1.42Zm10.48 0 1.79 1.79 1.41-1.41-1.79-1.8-1.41 1.42ZM12 7a5 5 0 100 10 5 5 0 000-10Z"/></svg>
+    </span>
+    <span class="track-icon track-moon" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79Z"/></svg>
+    </span>
+    <span class="switch-thumb">
+      <svg class="thumb-sun" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42Zm10.48 0 1.79-1.79 1.41 1.41-1.79 1.8-1.41-1.42ZM12 4V1h0v3Zm0 19v-3h0v3ZM4 12H1v0h3Zm22 0h-3v0h3ZM6.76 19.16l-1.8 1.79-1.41-1.41 1.79-1.8 1.42 1.42Zm10.48 0 1.79 1.79 1.41-1.41-1.79-1.8-1.41 1.42ZM12 7a5 5 0 100 10 5 5 0 000-10Z"/></svg>
+      <svg class="thumb-moon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79Z"/></svg>
+    </span>
+  </span>
+  <span class="switch-label" id="themeLabel">Light</span>
+</button>
+
+  </div>
+</header>
+<!-- Backdrop + side drawer for mobile/tablet -->
+<div id="backdrop" class="backdrop" hidden></div>
+<aside id="mobileNav" class="side-drawer" aria-hidden="true">
+  <div class="drawer-header">
+    <span class="brand">BrewLoom Coffee</span>
+    <button id="drawerClose" class="drawer-close" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3L16.9 4.3z"/>
+      </svg>
+    </button>
+  </div>
+  <nav class="drawer-links">
+    <a href="index.html">Home</a>
+    <a href="coffee.html">Coffee</a>
+    <a href="pastries.html">Pastries</a>
+    <a href="accessories.html">Accessories</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</aside>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text reveal-on-scroll">
+          <h1>Specialty Coffee, Freshly Brewed</h1>
+          <p>Discover single-origin beans, artisan pastries, and thoughtful accessories crafted for the perfect cup.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="coffee.html">Shop Coffee</a>
+            <a class="btn btn-outline" href="contact.html">Visit or Contact Us</a>
+          </div>
+        </div>
+        <div class="hero-media reveal-on-scroll delay-1">
+          <img id="heroSpin" src="assets/images/coffeecup.png" alt="Pour-over coffee" loading="lazy">
+        </div>
+      </div>
+      <div class="hero-wave" aria-hidden="true"></div>
+    </section>
+
+    <section class="categories container">
+      <h2 class="section-title reveal-on-scroll">Browse Categories</h2>
+      <div class="grid cards">
+        <a class="card reveal-on-scroll" href="coffee.html">
+          <img src="https://images.unsplash.com/photo-1445077100181-a33e9ac94db0?q=80&w=1200&auto=format&fit=crop" alt="Coffee beans">
+          <div class="card-body">
+            <h3>Beans & Blends</h3>
+            <p>Single-origin and signature blends roasted to perfection.</p>
+          </div>
+        </a>
+        <a class="card reveal-on-scroll delay-1" href="pastries.html">
+          <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1200&auto=format&fit=crop" alt="Pastries assortment">
+          <div class="card-body">
+            <h3>Pastries</h3>
+            <p>Freshly baked croissants, brownies, and cookies.</p>
+          </div>
+        </a>
+        <a class="card reveal-on-scroll delay-2" href="accessories.html">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1200&auto=format&fit=crop" alt="Coffee accessories">
+          <div class="card-body">
+            <h3>Accessories</h3>
+            <p>Mugs, filters, kettles, and everything in between.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="featured bg-alt">
+      <div class="container">
+        <h2 class="section-title reveal-on-scroll">Featured Products</h2>
+        <div class="grid product-grid">
+          <article class="product-card reveal-on-scroll">
+            <span class="badge">Best Seller</span>
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop" alt="House Blend">
+            <h3>House Blend</h3>
+            <p>Balanced chocolate and nut finish. 250g</p>
+            <div class="price">LKR 2,800</div>
+          </article>
+          <article class="product-card reveal-on-scroll delay-1">
+            <span class="badge badge-accent">New</span>
+            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop" alt="Cold Brew Bottle">
+            <h3>Cold Brew Bottle</h3>
+            <p>Ready-to-drink, slow steeped for 18 hours.</p>
+            <div class="price">LKR 1,200</div>
+          </article>
+          <article class="product-card reveal-on-scroll delay-2">
+            <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=1200&auto=format&fit=crop" alt="French Press">
+            <h3>French Press</h3>
+            <p>Classic 600ml borosilicate glass brewer.</p>
+            <div class="price">LKR 6,900</div>
+          </article>
+          <article class="product-card reveal-on-scroll delay-3">
+            <img src="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?q=80&w=1200&auto=format&fit=crop" alt="Croissant Box">
+            <h3>Croissant Box</h3>
+            <p>Buttery, flaky, baked fresh daily.</p>
+            <div class="price">LKR 2,200</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="story container">
+      <div class="story-inner">
+        <div class="story-media reveal-on-scroll">
+          <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1200&auto=format&fit=crop" alt="Barista pouring latte art">
+        </div>
+        <div class="story-text reveal-on-scroll delay-1">
+          <h2>Our Story</h2>
+          <p>We source ethically from smallholder farms and roast in small batches to highlight terroir. Every cup supports sustainable livelihoods and celebrates craftsmanship.</p>
+          <a class="btn btn-outline" href="contact.html">Learn More</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> BrewLoom Coffee. All rights reserved.</p>
+  </div>
+</footer>
+<button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
+

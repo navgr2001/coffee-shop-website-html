@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BrewLoom Coffee — simple e-commerce demo with HTML, CSS, JS">
+  <title>Pastries • BrewLoom Coffee</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="pastries">
+  <header id="top" class="navbar">
+  <div class="container nav-inner">
+    <button id="menuToggle" class="menu-toggle" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
+      <svg class="icon-burger" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/>
+      </svg>
+    </button>
+    <a class="brand" href="index.html">BrewLoom Coffee</a>
+    <nav class="nav-links">
+      <a href="index.html" data-link="home">Home</a>
+      <a href="coffee.html" data-link="coffee">Coffee</a>
+      <a href="pastries.html" data-link="pastries">Pastries</a>
+      <a href="accessories.html" data-link="accessories">Accessories</a>
+      <a href="contact.html" data-link="contact">Contact</a>
+    </nav>
+    <button id="themeToggle" class="theme-switch" aria-label="Switch to dark mode" aria-pressed="false" title="Switch theme">
+  <span class="switch-track" aria-hidden="true">
+    <span class="track-icon track-sun" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42Zm10.48 0 1.79-1.79 1.41 1.41-1.79 1.8-1.41-1.42ZM12 4V1h0v3Zm0 19v-3h0v3ZM4 12H1v0h3Zm22 0h-3v0h3ZM6.76 19.16l-1.8 1.79-1.41-1.41 1.79-1.8 1.42 1.42Zm10.48 0 1.79 1.79 1.41-1.41-1.79-1.8-1.41 1.42ZM12 7a5 5 0 100 10 5 5 0 000-10Z"/></svg>
+    </span>
+    <span class="track-icon track-moon" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79Z"/></svg>
+    </span>
+    <span class="switch-thumb">
+      <svg class="thumb-sun" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42Zm10.48 0 1.79-1.79 1.41 1.41-1.79 1.8-1.41-1.42ZM12 4V1h0v3Zm0 19v-3h0v3ZM4 12H1v0h3Zm22 0h-3v0h3ZM6.76 19.16l-1.8 1.79-1.41-1.41 1.79-1.8 1.42 1.42Zm10.48 0 1.79 1.79 1.41-1.41-1.79-1.8-1.41 1.42ZM12 7a5 5 0 100 10 5 5 0 000-10Z"/></svg>
+      <svg class="thumb-moon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79Z"/></svg>
+    </span>
+  </span>
+  <span class="switch-label" id="themeLabel">Light</span>
+</button>
+
+  </div>
+</header>
+<!-- Backdrop + side drawer for mobile/tablet -->
+<div id="backdrop" class="backdrop" hidden></div>
+<aside id="mobileNav" class="side-drawer" aria-hidden="true">
+  <div class="drawer-header">
+    <span class="brand">BrewLoom Coffee</span>
+    <button id="drawerClose" class="drawer-close" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3L16.9 4.3z"/>
+      </svg>
+    </button>
+  </div>
+  <nav class="drawer-links">
+    <a href="index.html">Home</a>
+    <a href="coffee.html">Coffee</a>
+    <a href="pastries.html">Pastries</a>
+    <a href="accessories.html">Accessories</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</aside>
+
+  <main class="container page">
+    <h1 class="page-title reveal-on-scroll">Pastries</h1>
+    <p class="page-subtitle reveal-on-scroll">Baked fresh every morning with premium ingredients.</p>
+    <div class="grid product-grid">
+      <article class="product-card reveal-on-scroll">
+        <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=1200&auto=format&fit=crop" alt="Butter Croissant">
+        <h3>Butter Croissant</h3>
+        <p>Flaky layers with rich buttery aroma.</p>
+        <div class="price">LKR 420</div>
+      </article>
+      <article class="product-card reveal-on-scroll delay-1">
+        <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?q=80&w=1200&auto=format&fit=crop" alt="Chocolate Brownie">
+        <h3>Chocolate Brownie</h3>
+        <p>Fudgy center with crackly top.</p>
+        <div class="price">LKR 500</div>
+      </article>
+      <article class="product-card reveal-on-scroll delay-2">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" alt="Cinnamon Roll">
+        <h3>Cinnamon Roll</h3>
+        <p>Swirls of cinnamon and vanilla glaze.</p>
+        <div class="price">LKR 450</div>
+      </article>
+      <article class="product-card reveal-on-scroll delay-3">
+        <span class="badge">Vegan</span>
+        <img src="https://images.unsplash.com/photo-1523986889634-5165c7b3b623?q=80&w=1200&auto=format&fit=crop" alt="Blueberry Muffin">
+        <h3>Blueberry Muffin</h3>
+        <p>Bursting with blueberries and lemon zest.</p>
+        <div class="price">LKR 480</div>
+      </article>
+      <article class="product-card reveal-on-scroll delay-4">
+        <img src="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?q=80&w=1200&auto=format&fit=crop" alt="Almond Biscotti">
+        <h3>Almond Biscotti</h3>
+        <p>Perfect for dipping in your latte.</p>
+        <div class="price">LKR 350</div>
+      </article>
+    </div>
+  </main>
+  <footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> BrewLoom Coffee. All rights reserved.</p>
+  </div>
+</footer>
+<button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
+
